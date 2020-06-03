@@ -18,6 +18,9 @@ class pricing extends React.Component {
     }
     async componentDidMount() {
         await this.requestPlans(this.state.currency)
+        this.setState({
+            loaded: true
+        })
     }
     requestPlans = async (currency) => {
         const myHeaders = new Headers();
@@ -73,6 +76,12 @@ class pricing extends React.Component {
             simbol = "CHF";
         } else if (this.state.currency === "USD") {
             simbol = '$';
+        }
+
+        if (!this.state.loaded) {
+            return (<div className='p-5'>
+                <h1 className='text-center'> Loading..</h1>
+            </div>)
         }
         return (
             <Layout>
@@ -131,7 +140,7 @@ class pricing extends React.Component {
                                                     <p className='text-muted '>
                                                         Billed as
                                                 <small className=''> {simbol}</small>
-                                                        <span> {plan.Pricing[this.state.length]} </span>
+                                                        <span>{plan.Pricing[this.state.length]} </span>
                                                         {payLength}
                                                     </p> : "Not Available"}
                                         </div>
