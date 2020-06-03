@@ -66,10 +66,18 @@ class pricing extends React.Component {
         } else if (this.state.length === '1') {
             payLength = 'monthly'
         }
+        let simbol = ''
+        if (this.state.currency === "EUR") {
+            simbol = "€"
+        } else if (this.state.currency === "CHF") {
+            simbol = "CHF";
+        } else if (this.state.currency === "USD") {
+            simbol = '$';
+        }
         return (
             <Layout>
                 {console.log(this.state.fetchedData)}
-                <Container style={{minHeight: "70vh"}}>
+                <Container style={{ minHeight: "70vh" }}>
                     <Row className='my-5'>
                         <Col>
                             <h5>Plans & Prices </h5>
@@ -102,18 +110,9 @@ class pricing extends React.Component {
                     <Row className='mt-3 mb-5 d-flex justify-content-center '>
                         {
                             myplans.map(plan => {
-                                let simbol = ''
-                                if (plan.Currency === "EUR") {
-                                    simbol = "€"
-                                } else if (plan.Currency === "CHF") {
-                                    simbol = "CHF";
-                                } else if (plan.Currency === "USD") {
-                                    simbol = '$';
-                                }
-
                                 return (
                                     <Col
-                                        key={plan.ID} leg="3" md="3" sm="6" xs="9" 
+                                        key={plan.ID} leg="3" md="3" sm="6" xs="9"
                                         className='border titles mb-3'
                                     >
                                         <div className='d-flex justify-content-center align-items-center text-center '>
