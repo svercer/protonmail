@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pricesBtn {
+  border: 1px solid #505061;
+  color: #505061;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.pricesBtn:hover {
+  background-color: #505061;
+  color: white;
+  text-decoration: none;
+}
+
+.value {
+  font-size: 1.5rem;
+}
+
+.simbol {
+  font-size: 0.7rem;
+}
+
+.select {
+  padding: 10px 25px;
+  color: white;
+  background-color: #6880dd;
+  border-radius: 5px;
+  border: 0;
+  border-color: 0;
+  position: absolute;
+  bottom: 50px;
+}
+
+.select:hover {
+  color: #6880dd;
+  background-color: white;
+  border: 1px solid #6880dd;
+}
+
+.titles {
+  position: relative;
+}
+
+.mostPopular {
+  color: #85b864;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+}
+/*# sourceMappingURL=style.css.map */
